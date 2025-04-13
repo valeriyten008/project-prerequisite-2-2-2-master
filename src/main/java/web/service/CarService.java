@@ -14,5 +14,13 @@ public class CarService {
         cars.add(new Car("BMW", "Grey", 234));
         cars.add(new Car("Porsche", "Красный", 456));
         return  cars;
+
+        public List<Car> getCars(int count) {
+            if (count >= 5 || count < 1) {
+                return cars;
+            }
+            return cars.subList(0, count);
+        }
+
     }
 }
