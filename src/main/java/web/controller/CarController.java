@@ -19,7 +19,7 @@ public class CarController {
     @GetMapping("/cars")
     public String showCars(@RequestParam(value = "count", required = false) Integer count, Model model) {
         List<Car> cars;
-        if (count == null) {
+        if (count == null || count < 0) {
             cars = carService.getAllCars();
         } else {
             cars = carService.getCars(count);
